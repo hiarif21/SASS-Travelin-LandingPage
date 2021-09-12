@@ -1,0 +1,47 @@
+@import "./colors";
+
+@mixin buttons(
+	$color,
+	$paddingY,
+	$paddingX,
+	$fontSize,
+	$fontWeight,
+	$borderRadius
+) {
+	text-decoration: none;
+	padding: $paddingY $paddingX;
+	font-size: $fontSize;
+	font-weight: $fontWeight;
+	border-radius: $borderRadius;
+	background-color: $color;
+	color: $white;
+	border: 2px solid $color;
+
+	&:hover {
+		background-color: $white;
+		color: $color;
+	}
+
+	&.secondary {
+		background-color: $white;
+		color: $color;
+		border: 2px solid $color;
+
+		&:hover {
+			background-color: $blue;
+			color: $white;
+		}
+	}
+}
+
+.button {
+	&.small {
+		@include buttons($blue, 5px, 10px, 0.75rem, 600, 4px);
+	}
+	&.normal {
+		@include buttons($blue, 10px, 15px, 1rem, 600, 8px);
+	}
+	&.large {
+		@include buttons($blue, 20px, 40px, 1.5rem, 600, 8px);
+	}
+}

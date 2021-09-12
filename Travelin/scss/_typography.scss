@@ -1,0 +1,37 @@
+@import "./colors";
+
+@mixin typo($fontSize, $fontWeightNormal, $fontWeightBold) {
+	font-size: $fontSize;
+	font-weight: $fontWeightNormal;
+
+	&.bold {
+		font-weight: $fontWeightBold;
+	}
+
+	&.text-blue {
+		color: $blue;
+	}
+
+	&.text-black {
+		color: $black;
+	}
+
+	&.text-grey {
+		color: $grey;
+	}
+}
+
+.text {
+	&.extra-large {
+		@include typo(3rem, 600, 700);
+	}
+	&.large {
+		@include typo(2.25rem, 600, 700);
+	}
+	&.semi-large {
+		@include typo(1.5rem, 400, 600);
+	}
+	&.normal {
+		@include typo(1rem, 400, 600);
+	}
+}
